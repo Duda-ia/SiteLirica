@@ -85,4 +85,69 @@ const observer = new IntersectionObserver((entries) => {
 // Observe all sections
 document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
+});
+
+// Photo Gallery
+document.addEventListener('DOMContentLoaded', function() {
+    const photoContainer = document.querySelector('.photo-container');
+    if (!photoContainer) return; // Only run on pages with photo gallery
+
+    const photos = photoContainer.querySelectorAll('img');
+    const prevBtn = document.querySelector('.prev-photo');
+    const nextBtn = document.querySelector('.next-photo');
+    const dotsContainer = document.querySelector('.photo-dots');
+
+    let currentPhotoIndex = 0;
+
+    // Create dots
+    photos.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('photo-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => showPhoto(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('.photo-dot');
+
+    function showPhoto(index) {
+        photos.forEach(photo => photo.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        photos[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentPhotoIndex = index;
+    }
+
+    function nextPhoto() {
+        const nextIndex = (currentPhotoIndex + 1) % photos.length;
+        showPhoto(nextIndex);
+    }
+
+    function prevPhoto() {
+        const prevIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+        showPhoto(prevIndex);
+    }
+
+    // Event listeners
+    nextBtn.addEventListener('click', nextPhoto);
+    prevBtn.addEventListener('click', prevPhoto);
+
+    // Auto advance every 5 seconds
+    let autoAdvance = setInterval(nextPhoto, 5000);
+
+    // Pause auto-advance on hover
+    photoContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoAdvance);
+    });
+
+    photoContainer.addEventListener('mouseleave', () => {
+        autoAdvance = setInterval(nextPhoto, 5000);
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') nextPhoto();
+        if (e.key === 'ArrowLeft') prevPhoto();
+    });
 }); 
