@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Sunday Afternoon';
+    src: url('SundayAfternoonRegular.woff2') format('woff2'),
+        url('SundayAfternoonRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sunday Afternoon';
+    src: url('SundayAfternoonItalic.woff2') format('woff2'),
+        url('SundayAfternoonItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oldburg Display';
+    src: url('OldburgDisplay-Light.woff2') format('woff2'),
+        url('OldburgDisplay-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oldburg Display';
+    src: url('OldburgDisplay-Bold.woff2') format('woff2'),
+        url('OldburgDisplay-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oldburg Display';
+    src: url('OldburgDisplay-Medium.woff2') format('woff2'),
+        url('OldburgDisplay-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oldburg Display';
+    src: url('OldburgDisplay-Regular.woff2') format('woff2'),
+        url('OldburgDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oldburg Display';
+    src: url('OldburgDisplay-SemiBold.woff2') format('woff2'),
+        url('OldburgDisplay-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
